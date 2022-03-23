@@ -21,3 +21,9 @@ export const handle = async ({ event, resolve }) => {
 
 	return response;
 };
+
+export function getSession(event) {
+	return {
+		userid: event.locals.userid
+	};
+}

@@ -53,6 +53,8 @@
 				<button class="save" aria-label="Save todo" />
 			</form>
 
+			<a href="/todos/{todo.uid}" class="detail">ℹ</a>
+
 			<form
 				action="/todos?_method=DELETE"
 				method="post"
@@ -101,7 +103,7 @@
 
 	.todo {
 		display: grid;
-		grid-template-columns: 2rem 1fr 2rem;
+		grid-template-columns: 2rem 1fr auto 2rem;
 		grid-gap: 0.5rem;
 		align-items: center;
 		margin: 0 0 0.5rem 0;
@@ -174,5 +176,20 @@
 	.save:focus {
 		transition: opacity 0.2s;
 		opacity: 1;
+	}
+
+	.detail {
+		color: #666;
+		display: inline-block;
+		width: 16px;
+		height: 16px;
+		border-radius: 8px;
+		background-color: #eee;
+		text-align: center;
+		cursor: default;
+	}
+	.detail:hover {
+		background-color: #ccc;
+		text-decoration: none;
 	}
 </style>
