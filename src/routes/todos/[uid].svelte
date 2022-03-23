@@ -2,6 +2,7 @@
   import { api } from './_api';
 
   export async function load({ params, session }) {
+    console.log('todos/[uid]: load() called')
     let { uid } = params;
     let { userid } = session;
 
@@ -31,7 +32,18 @@
 </script>
 
 <script>
+  import { afterNavigate} from '$app/navigation'
+  import { onMount } from 'svelte'
+
   export let item;
+
+  onMount(() => {
+    console.log('todos/[uid]: onMount() called')
+  })
+
+  afterNavigate(() => {
+    console.log('todos/[uid]: afterNavigate() called')
+  })
 </script>
 
 <h1>
