@@ -2,11 +2,11 @@
   "name": "sv-after-navigate-bug",
   "version": "0.0.1",
   "scripts": {
-    "dev": "svelte-kit dev",
-    "build": "svelte-kit build",
-    "package": "svelte-kit package",
-    "preview": "svelte-kit preview",
-    "prepare": "svelte-kit sync"
+    "dev": "node ../johnnysprinkles/kit/packages/kit/src/cli.js dev --port 4567",
+    "build": "node ../johnnysprinkles/kit/packages/kit/src/cli.js build",
+    "package": "node ../johnnysprinkles/kit/packages/kit/src/cli.js package",
+    "preview": "node ../johnnysprinkles/kit/packages/kit/src/cli.js preview --port 4567",
+    "sync": "node ../johnnysprinkles/kit/packages/kit/src/cli.js sync"
   },
   "devDependencies": {
     "@sveltejs/adapter-auto": "next",
@@ -17,6 +17,15 @@
   "dependencies": {
     "@fontsource/fira-mono": "^4.5.0",
     "@lukeed/uuid": "^2.0.0",
-    "cookie": "^0.4.1"
+    "@sveltejs/adapter-static": "^1.0.0-next.30",
+    "cookie": "^0.4.1",
+    "express": "^4.18.1",
+    "polka": "^0.5.2",
+    "sirv": "^2.0.2"
+  },
+  "pnpm": {
+    "overrides": {
+      "@sveltejs/kit": "../johnnysprinkles/kit/packages/kit"
+    }
   }
 }

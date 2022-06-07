@@ -3,7 +3,22 @@
 </script>
 
 <script>
+	import { page } from '$app/stores';
+	import { browser, prerendering } from '$app/env';
+	import { onMount } from 'svelte';
+
 	import Counter from '$lib/Counter.svelte';
+
+		if (!prerendering) {
+			console.log($page.url.searchParams.get('foo'));
+		}
+		
+	onMount(() => {
+		console.log('a');
+		// if (!prerendering) {
+		// 	console.log($page.url.searchParams.get('foo'));
+		// }
+	})
 </script>
 
 <svelte:head>
@@ -19,7 +34,7 @@
 			</picture>
 		</div>
 
-		to your new<br />SvelteKit app
+		to your new<br />SvelteKit app !!!
 	</h1>
 
 	<h2>

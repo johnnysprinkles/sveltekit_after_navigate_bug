@@ -27,40 +27,40 @@ export const get = async ({ locals }) => {
 	};
 };
 
-export const post = async ({ request, locals }) => {
-	const form = await request.formData();
+// export const post = async ({ request, locals }) => {
+// 	const form = await request.formData();
 
-	await api('post', `todos/${locals.userid}`, {
-		text: form.get('text')
-	});
+// 	await api('post', `todos/${locals.userid}`, {
+// 		text: form.get('text')
+// 	});
 
-	return {};
-};
+// 	return {};
+// };
 
-// If the user has JavaScript disabled, the URL will change to
-// include the method override unless we redirect back to /todos
-const redirect = {
-	status: 303,
-	headers: {
-		location: '/todos'
-	}
-};
+// // If the user has JavaScript disabled, the URL will change to
+// // include the method override unless we redirect back to /todos
+// const redirect = {
+// 	status: 303,
+// 	headers: {
+// 		location: '/todos'
+// 	}
+// };
 
-export const patch = async ({ request, locals }) => {
-	const form = await request.formData();
+// export const patch = async ({ request, locals }) => {
+// 	const form = await request.formData();
 
-	await api('patch', `todos/${locals.userid}/${form.get('uid')}`, {
-		text: form.has('text') ? form.get('text') : undefined,
-		done: form.has('done') ? !!form.get('done') : undefined
-	});
+// 	await api('patch', `todos/${locals.userid}/${form.get('uid')}`, {
+// 		text: form.has('text') ? form.get('text') : undefined,
+// 		done: form.has('done') ? !!form.get('done') : undefined
+// 	});
 
-	return redirect;
-};
+// 	return redirect;
+// };
 
-export const del = async ({ request, locals }) => {
-	const form = await request.formData();
+// export const del = async ({ request, locals }) => {
+// 	const form = await request.formData();
 
-	await api('delete', `todos/${locals.userid}/${form.get('uid')}`);
+// 	await api('delete', `todos/${locals.userid}/${form.get('uid')}`);
 
-	return redirect;
-};
+// 	return redirect;
+// };
